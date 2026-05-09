@@ -1,6 +1,6 @@
-import { Link, useLocation, useRouter } from "@tanstack/react-router";
-import { buttonVariants } from "./ui/button";
+import { Link, useLocation } from "@tanstack/react-router";
 import { CartDrawer } from "./CartDrawer";
+import { buttonVariants } from "./ui/button";
 
 type NavItem = {
   name: string;

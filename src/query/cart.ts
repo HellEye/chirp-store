@@ -1,6 +1,6 @@
 import { queryOptions, useMutation } from "@tanstack/react-query";
-import { client } from "./api";
 import type { Cart } from "../types/cart";
+import { client } from "./api";
 
 export const getCart = queryOptions({
   queryKey: ["cart"] as const,
@@ -21,7 +21,7 @@ export const useAddToCart = () => {
       console.log(res);
       return res;
     },
-    onSuccess(data, variables, onMutateResult, context) {
+    onSuccess(_data, _variables, _onMutateResult, context) {
       context.client.invalidateQueries({ queryKey: ["cart"] });
     },
   });
@@ -33,7 +33,7 @@ export const useRemoveFromCart = () => {
     mutationFn: async (productId: string | number) => {
       return await client.delete(`/cart/${productId}`);
     },
-    onSuccess(data, variables, onMutateResult, context) {
+    onSuccess(_data, _variables, _onMutateResult, context) {
       context.client.invalidateQueries({ queryKey: ["cart"] });
     },
   });
@@ -50,7 +50,7 @@ export const useProcessPayment = () => {
       await mockProcessPayment();
       return await client.delete("/cart");
     },
-    onSuccess(data, variables, onMutateResult, context) {
+    onSuccess(_data, _variables, _onMutateResult, context) {
       context.client.invalidateQueries({ queryKey: ["cart"] });
     },
   });

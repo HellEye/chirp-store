@@ -1,10 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { AddToCart } from "../components/ui/addToCartButton";
-import type { Album } from "../types/album";
-import { Container } from "../components/Container";
 import { useQuery } from "@tanstack/react-query";
-import { getAlbumById } from "../query/albums";
+import { createFileRoute } from "@tanstack/react-router";
+import { Container } from "../components/Container";
 import { List } from "../components/List";
+import { getAlbumById } from "../query/albums";
 import type { Song } from "../types/song";
 
 export const Route = createFileRoute("/albums_/$albumId")({

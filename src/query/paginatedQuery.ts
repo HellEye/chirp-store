@@ -1,9 +1,7 @@
 import {
-  useInfiniteQuery,
   useQuery,
-  type QueryFunction,
   type QueryKey,
-  type QueryOptions,
+  type QueryOptions
 } from "@tanstack/react-query";
 import { useCallback, useState } from "react";
 export type PaginatedResponse<T> = {

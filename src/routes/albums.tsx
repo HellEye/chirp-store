@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Container } from "../components/Container";
 import { AlbumList } from "../components/AlbumList";
-import { listArtistAlbums } from "../query/artists";
-import { usePaginatedQuery } from "../query/paginatedQuery";
+import { Container } from "../components/Container";
 import { listAllAlbums } from "../query/albums";
+import { usePaginatedQuery } from "../query/paginatedQuery";
 
 export const Route = createFileRoute("/albums")({
   component: RouteComponent,

@@ -1,12 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { usePaginatedQuery } from "../query/paginatedQuery";
-import { getArtistById, listArtistAlbums } from "../query/artists";
 import { useQuery } from "@tanstack/react-query";
-import { PaginatedList } from "../components/PaginatedList";
-import type { Album } from "../types/album";
-import { Container } from "../components/Container";
-import { AddToCart } from "../components/ui/addToCartButton";
+import { createFileRoute } from "@tanstack/react-router";
 import { AlbumList } from "../components/AlbumList";
+import { Container } from "../components/Container";
+import { getArtistById, listArtistAlbums } from "../query/artists";
+import { usePaginatedQuery } from "../query/paginatedQuery";
 
 export const Route = createFileRoute("/artists_/$artistId")({
   component: RouteComponent,

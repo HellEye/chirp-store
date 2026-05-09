@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TestRouteImport } from './routes/test'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as ArtistsRouteImport } from './routes/artists'
 import { Route as AlbumsRouteImport } from './routes/albums'
@@ -17,11 +16,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ArtistsArtistIdRouteImport } from './routes/artists_.$artistId'
 import { Route as AlbumsAlbumIdRouteImport } from './routes/albums_.$albumId'
 
-const TestRoute = TestRouteImport.update({
-  id: '/test',
-  path: '/test',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CheckoutRoute = CheckoutRouteImport.update({
   id: '/checkout',
   path: '/checkout',
@@ -58,7 +52,6 @@ export interface FileRoutesByFullPath {
   '/albums': typeof AlbumsRoute
   '/artists': typeof ArtistsRoute
   '/checkout': typeof CheckoutRoute
-  '/test': typeof TestRoute
   '/albums/$albumId': typeof AlbumsAlbumIdRoute
   '/artists/$artistId': typeof ArtistsArtistIdRoute
 }
@@ -67,7 +60,6 @@ export interface FileRoutesByTo {
   '/albums': typeof AlbumsRoute
   '/artists': typeof ArtistsRoute
   '/checkout': typeof CheckoutRoute
-  '/test': typeof TestRoute
   '/albums/$albumId': typeof AlbumsAlbumIdRoute
   '/artists/$artistId': typeof ArtistsArtistIdRoute
 }
@@ -77,7 +69,6 @@ export interface FileRoutesById {
   '/albums': typeof AlbumsRoute
   '/artists': typeof ArtistsRoute
   '/checkout': typeof CheckoutRoute
-  '/test': typeof TestRoute
   '/albums_/$albumId': typeof AlbumsAlbumIdRoute
   '/artists_/$artistId': typeof ArtistsArtistIdRoute
 }
@@ -88,7 +79,6 @@ export interface FileRouteTypes {
     | '/albums'
     | '/artists'
     | '/checkout'
-    | '/test'
     | '/albums/$albumId'
     | '/artists/$artistId'
   fileRoutesByTo: FileRoutesByTo
@@ -97,7 +87,6 @@ export interface FileRouteTypes {
     | '/albums'
     | '/artists'
     | '/checkout'
-    | '/test'
     | '/albums/$albumId'
     | '/artists/$artistId'
   id:
@@ -106,7 +95,6 @@ export interface FileRouteTypes {
     | '/albums'
     | '/artists'
     | '/checkout'
-    | '/test'
     | '/albums_/$albumId'
     | '/artists_/$artistId'
   fileRoutesById: FileRoutesById
@@ -116,20 +104,12 @@ export interface RootRouteChildren {
   AlbumsRoute: typeof AlbumsRoute
   ArtistsRoute: typeof ArtistsRoute
   CheckoutRoute: typeof CheckoutRoute
-  TestRoute: typeof TestRoute
   AlbumsAlbumIdRoute: typeof AlbumsAlbumIdRoute
   ArtistsArtistIdRoute: typeof ArtistsArtistIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/test': {
-      id: '/test'
-      path: '/test'
-      fullPath: '/test'
-      preLoaderRoute: typeof TestRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/checkout': {
       id: '/checkout'
       path: '/checkout'
@@ -180,7 +160,6 @@ const rootRouteChildren: RootRouteChildren = {
   AlbumsRoute: AlbumsRoute,
   ArtistsRoute: ArtistsRoute,
   CheckoutRoute: CheckoutRoute,
-  TestRoute: TestRoute,
   AlbumsAlbumIdRoute: AlbumsAlbumIdRoute,
   ArtistsArtistIdRoute: ArtistsArtistIdRoute,
 }

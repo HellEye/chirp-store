@@ -1,10 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import logo from "../logo.svg";
-import type { Artist } from "../types/artist";
-import { listArtists } from "../query/artists";
-import { usePaginatedQuery } from "../query/paginatedQuery";
 import { Container } from "../components/Container";
-import { Button, buttonVariants } from "../components/ui/button";
+import { buttonVariants } from "../components/ui/button";
 
 export const Route = createFileRoute("/")({
   component: App,

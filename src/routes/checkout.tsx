@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { getCart, useProcessPayment } from "../query/cart";
-import { Container } from "../components/Container";
-import { Button, LoadingButton } from "../components/ui/button";
 import { toast } from "sonner";
+import { Container } from "../components/Container";
+import { LoadingButton } from "../components/ui/button";
+import { getCart, useProcessPayment } from "../query/cart";
 
 export const Route = createFileRoute("/checkout")({
   component: RouteComponent,

@@ -1,9 +1,9 @@
-import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
-import { usePaginatedQuery } from "../query/paginatedQuery";
-import { listArtists } from "../query/artists";
-import type { Artist } from "../types/artist";
-import { PaginatedList, type FilterOptions } from "../components/PaginatedList";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Container } from "../components/Container";
+import { PaginatedList, type FilterOptions } from "../components/PaginatedList";
+import { listArtists } from "../query/artists";
+import { usePaginatedQuery } from "../query/paginatedQuery";
+import type { Artist } from "../types/artist";
 
 export const Route = createFileRoute("/artists")({
   component: RouteComponent,

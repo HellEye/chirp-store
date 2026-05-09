@@ -1,11 +1,10 @@
+import { ArrowBigDown, ArrowBigUp } from "lucide-react";
+import { Fragment } from "react/jsx-runtime";
 import type { PaginatedQueryResult } from "../query/paginatedQuery";
+import { List } from "./List";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import clsx from "clsx";
 import { Select, SelectContent, SelectItem, SelectTrigger } from "./ui/select";
-import { Fragment } from "react/jsx-runtime";
-import { ArrowBigDown, ArrowBigUp } from "lucide-react";
-import { List } from "./List";
 
 export type FilterOptions = {
   sortingOptions?: { label: string; value: string }[];
@@ -15,7 +14,6 @@ export type PaginatedListProps<T> = PaginatedQueryResult<T> &
     renderItem: (item: T) => React.ReactNode;
   };
 
-const PAGE_SIZE_OPTIONS = [10, 20, 50];
 
 const PaginationFilters = ({
   setters,
